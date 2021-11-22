@@ -12,6 +12,8 @@ function App() {
     <div className="App" style={{ backgroundColor: "gray" }}>
       <BrowserRouter>
         <Header />
+        <Header />
+
         <Main />
         <Footer />
       </BrowserRouter>
