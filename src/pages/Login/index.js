@@ -1,15 +1,10 @@
 import React from "react";
-import { Header, Main, Footer } from "./../../Layout";
-import Product from "../../components/Products/Product";
+import LoginForm from "./../../components/LoginForm";
 
 export default function Index() {
   return (
     <div>
-      <Header />
-      <Main>
-        <Product />
-      </Main>
-      <Footer />
+      <LoginForm />
     </div>
   );
 }

@@ -1,76 +1,60 @@
 import React from "react";
+import { Form, Button, Col, Row } from "react-bootstrap";
 
 function Index() {
   return (
     <div>
-      <form>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputEmail4">Email</label>
-            <input
-              type="email"
-              class="form-control"
-              id="inputEmail4"
-              placeholder="Email"
-            />
-          </div>
-          <div class="form-group col-md-6">
-            <label for="inputPassword4">Password</label>
-            <input
-              type="password"
-              class="form-control"
-              id="inputPassword4"
-              placeholder="Password"
-            />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="inputAddress">Address</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputAddress"
-            placeholder="1234 Main St"
-          />
-        </div>
-        <div class="form-group">
-          <label for="inputAddress2">Address 2</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputAddress2"
-            placeholder="Apartment, studio, or floor"
-          />
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputCity">City</label>
-            <input type="text" class="form-control" id="inputCity" />
-          </div>
-          <div class="form-group col-md-4">
-            <label for="inputState">State</label>
-            <select id="inputState" class="form-control">
-              <option selected>Choose...</option>
+      <Form className="w-50 m-auto">
+        <Row className="mb-3">
+          <Form.Group as={Col} controlId="formGridEmail">
+            <Form.Label>Email</Form.Label>
+            <Form.Control type="email" placeholder="Enter email" />
+          </Form.Group>
+
+          <Form.Group as={Col} controlId="formGridPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control type="password" placeholder="Password" />
+          </Form.Group>
+        </Row>
+
+        <Form.Group className="mb-3" controlId="formGridAddress1">
+          <Form.Label>Address</Form.Label>
+          <Form.Control placeholder="1234 Main St" />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formGridAddress2">
+          <Form.Label>Address 2</Form.Label>
+          <Form.Control placeholder="Apartment, studio, or floor" />
+        </Form.Group>
+
+        <Row className="mb-3">
+          <Form.Group as={Col} controlId="formGridCity">
+            <Form.Label>City</Form.Label>
+            <Form.Control />
+          </Form.Group>
+
+          <Form.Group as={Col} controlId="formGridState">
+            <Form.Label>State</Form.Label>
+            <Form.Select defaultValue="Choose...">
+              <option>Choose...</option>
               <option>...</option>
-            </select>
-          </div>
-          <div class="form-group col-md-2">
-            <label for="inputZip">Zip</label>
-            <input type="text" class="form-control" id="inputZip" />
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck" />
-            <label class="form-check-label" for="gridCheck">
-              Check me out
-            </label>
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary">
-          Sign in
-        </button>
-      </form>
+            </Form.Select>
+          </Form.Group>
+
+          <Form.Group as={Col} controlId="formGridZip">
+            <Form.Label>Zip</Form.Label>
+            <Form.Control />
+          </Form.Group>
+        </Row>
+
+        <Form.Group className="mb-3" id="formGridCheckbox">
+          <Form.Check type="checkbox" label="Check me out" />
+        </Form.Group>
+
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
     </div>
   );
 }
