@@ -1,18 +1,23 @@
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 
-export default function Index() {
+export default function Index({ resultApi }) {
   const [queryApi, setQueryApi] = useState({
     product: "",
     number: 0,
   });
   const formHandler = (e) => {
     e.preventDefault();
-    fetch("")
+
+    fetch(`https://api.agify.io/?name=${queryApi.product}`)
       .then((res) => {
         return res.json();
       })
-      .then((data) => {})
+      .then((data) => {
+        // setQueryApi(data);
+        console.log(data);
+        resultApi(data);
+      })
       .catch((error) => {
         console.log(error);
       });
@@ -35,6 +40,7 @@ export default function Index() {
         <label>Number of Products</label>
 
         <select
+          className="ms-2"
           onChange={(e) => setQueryApi({ ...queryApi, number: e.target.value })}
         >
           <option value="1">1</option>
