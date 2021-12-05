@@ -6,7 +6,7 @@ function Index() {
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products?limit=6")
+    fetch("https://fakestoreapi.com/products?limit=10")
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);

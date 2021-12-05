@@ -9,7 +9,7 @@ export default function Index({ resultApi }) {
   const formHandler = (e) => {
     e.preventDefault();
 
-    fetch(`https://api.agify.io/?name=${queryApi.product}`)
+    fetch(`https://fakestoreapi.com/products?limit=2`)
       .then((res) => {
         return res.json();
       })
